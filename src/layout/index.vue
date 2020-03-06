@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <Drawer v-model="drawer" />
-    <v-app-bar app absolute color="white" elevate-on-scroll>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+   
+    <v-app-bar app absolute color="white" elevate-on-scroll >
+      
       <!-- <v-toolbar-title>Title</v-toolbar-title> -->
       <v-spacer></v-spacer>
       <!-- <v-btn icon>
@@ -42,14 +42,14 @@
 </template>
 
 <script>
-import Drawer from "./drawer";
+// import Drawer from "./drawer";
 export default {
   data() {
     return {
       drawer: true
     };
   },
-  components: { Drawer },
+  // components: { Drawer },
   computed: {
     key() {
       return this.$route.path;
