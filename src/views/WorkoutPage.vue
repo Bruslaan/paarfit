@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="d-flex justify-center">
+      <v-btn text @click="$router.push({name:'home'})">Abbruch</v-btn>
+    </div>
     <div class style="height:80vh">
       <transition-group
         appear
@@ -19,8 +22,8 @@
       </transition-group>
     </div>
     <div class="d-flex justify-center align-center bottom_nav">
-      <v-btn text @click="prev">Prev</v-btn>
-      <v-btn text @click="next">Next</v-btn>
+      <button @click="prev" class="prev">Zurück</button>
+      <button @click="next" class="next">Weiter</button>
     </div>
   </div>
 </template>
@@ -46,7 +49,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .bottom_nav {
   position: sticky;
   bottom: 0;
@@ -58,8 +61,8 @@ export default {
   width: 90vh;
   align-content: center;
   margin: auto;
-    left:0;
-  right:0;
+  left: 0;
+  right: 0;
   /* Border & BG */
   border: 1px dashed #009688;
   border-radius: 5px;
@@ -91,7 +94,7 @@ export default {
 .next,
 .prev {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   width: 70px;
   text-align: center;
   padding: 7px;
