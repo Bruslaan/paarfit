@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" mobile-break-point="900" left app>
+  <v-navigation-drawer v-model="drawer" mobile-break-point="900" right app>
     <template v-slot:prepend>
       <v-list-item two-line>
         <v-list-item-avatar>

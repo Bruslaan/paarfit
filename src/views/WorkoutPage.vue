@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="d-flex justify-center">
+    <!-- <div class="d-flex justify-center">
       <v-btn text @click="$router.push({name:'home'})">Abbruch</v-btn>
-    </div>
+    </div> -->
     <div class style="height:80vh">
       <transition-group
         appear
@@ -13,11 +13,11 @@
         mode="out-in"
       >
         <v-card v-if="menu==1" class="row" key="1" outlined>
-          <div class="d-flex justify-center align-center">Test</div>
+          <div class="d-flex justify-center align-center">Erste Übung</div>
         </v-card>
 
         <v-card v-if="menu==2" class="row" key="2" outlined>
-          <div class="d-flex justify-center align-center">Test2</div>
+          <div class="d-flex justify-center align-center">Zweite Übung</div>
         </v-card>
       </transition-group>
     </div>

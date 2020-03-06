@@ -1,25 +1,22 @@
 <template>
   <v-app>
-   
-    <v-app-bar app absolute color="white" elevate-on-scroll >
-      
-      <!-- <v-toolbar-title>Title</v-toolbar-title> -->
-      <v-spacer></v-spacer>
-      <!-- <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>-->
+    <!-- <Drawer v-model="drawer"/> -->
+    <v-app-bar app absolute color="white" elevate-on-scroll>
+      <v-toolbar-title @click="$router.push({name:'home'})">PaarFit</v-toolbar-title>
 
+      <v-spacer></v-spacer>
+      <!-- <v-btn icon @click="drawer=!drawer"><v-icon>mdi-menu</v-icon></v-btn> -->
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on">
-            <v-icon>mdi-dots-vertical</v-icon>
+            <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
 
         <v-list>
           <v-list-item @click="logout">
             <v-list-item-icon>
-              <v-icon>mdi-school</v-icon>
+              <v-icon>mdi-run</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Logout</v-list-item-title>
           </v-list-item>
@@ -46,7 +43,7 @@
 export default {
   data() {
     return {
-      drawer: true
+      drawer: false
     };
   },
   // components: { Drawer },
