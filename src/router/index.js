@@ -22,13 +22,13 @@ const routes = [
   },
 
   {
-    path: '/test',
+    path: '/workout',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: () => import('../views/test'),
+        name: 'workout',
+        component: () => import('../views/WorkoutPage'),
         meta: { title: 'Form', icon: 'mdi-home-city' }
       }
     ]

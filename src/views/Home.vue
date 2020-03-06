@@ -10,12 +10,7 @@
       <v-row justify="center" align="center">
         <div>
           <h1 class="text-center ma-3">Woche 1</h1>
-          <v-btn class="ma-3">Start Workout</v-btn>
-          <v-timeline>
-            <v-timeline-item right>timeline item</v-timeline-item>
-            <v-timeline-item right>timeline item</v-timeline-item>
-            <v-timeline-item right>timeline item</v-timeline-item>
-          </v-timeline>
+          <v-btn class="ma-3" @click="$router.push({name:'workout'})">Start Workout</v-btn>
         </div>
       </v-row>
     </v-layout>
