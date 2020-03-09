@@ -2,7 +2,7 @@
   <div>
     <v-card outlined class="justify-center">
       <v-card-title class="d-flex justify-center py-6">
-        <v-row justify="center" align="center">
+        <v-col justify="center" align="center">
           <v-avatar class="ma-4" size="90">
             <v-img :src="$store.getters['user/avatar']" alt="John">
               <template v-slot:placeholder>
@@ -15,16 +15,40 @@
           <!-- <a @click="$router.push('/profilePage')" class="ml-2">{{item.name}}</a> -->
 
           <h1 class="font-weight-bold display-1">Dei Mudda</h1>
-        </v-row>
+
+          <p class="text--secondary">Hier steht irgendwas über sein Wesen</p>
+        </v-col>
       </v-card-title>
 
-      <v-layout class="d-flex justify-center ma-4">
+      <div class="d-flex justify-space-between mx-4">
+        <v-col class="pa-0">
+          <p class="mb-0 pa-0">0</p>
+          <p class="mb-0 pa-0">Workouts</p>
+        </v-col>
+        <v-col class="pa-0">
+          <p class="mb-0 pa-0">0</p>
+          <p class="mb-0 pa-0">Wochen</p>
+        </v-col>
+        <v-col class="pa-0">
+          <p class="mb-0 pa-0">0</p>
+          <p class="mb-0 pa-0">Freunde</p>
+        </v-col>
+        <v-col class="pa-0">
+          <p class="mb-0 pa-0">0</p>
+          <p class="mb-0 pa-0">Workouts</p>
+        </v-col>
+      </div>
+      <v-layout class="d-flex justify-center mt-4 mx-4">
         <v-row justiry="center" align="center">
           <v-col>
             <v-progress-linear color="light-green darken-4" height="10" value="20" striped></v-progress-linear>
           </v-col>
         </v-row>
       </v-layout>
+      <div class="d-flex justify-space-between mb-5 mx-4">
+        <p class="ma-0">Anfänger</p>
+        <p class="ma-0">Meister</p>
+      </div>
 
       <!-- <v-tabs v-model="tab" centered grow background-color="light-grey">
         <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
@@ -108,7 +132,6 @@ ul {
 
 li {
   float: left;
-  border-right: 1px solid grey;
 }
 
 li a {
@@ -119,13 +142,11 @@ li a {
   padding: 5px 16px;
   text-decoration: none;
 }
-li:last-child {
-  border-right: none;
-}
 
 .active {
   /* background-color: grey; */
   color: black;
   /* border: solid 1px; */
+  border-bottom: solid 2px grey;
 }
 </style>
