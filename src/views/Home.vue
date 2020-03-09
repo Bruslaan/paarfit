@@ -9,7 +9,7 @@
     <v-layout>
       <v-row justify="center" align="center">
         <div>
-          <h1 class="text-center ma-3">Woche 1</h1>
+          <h1 class="text-center ma-3 ">Woche 1</h1>
           <v-btn
             class="ma-3 pulse-button"
             text

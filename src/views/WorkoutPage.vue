@@ -52,8 +52,8 @@ export default {
     progress() {
       return (this.menu / 3) * 100;
     },
-    progressDiscret(){
-      return this.menu + "/"+3
+    progressDiscret() {
+      return this.menu + 1 + "/" + 3;
     }
   },
   methods: {
