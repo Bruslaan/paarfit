@@ -29,7 +29,19 @@ const routes = [
         path: 'index',
         name: 'workout',
         component: () => import('../views/WorkoutPage'),
-        meta: { title: 'Form', icon: 'mdi-home-city' }
+        meta: { title: 'Workout', icon: 'mdi-home-city' }
+      }
+    ]
+  },
+  {
+    path: '/profile',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'profile',
+        component: () => import('../views/ProfilePage'),
+        meta: { title: 'Profile', icon: 'mdi-home-city' }
       }
     ]
   },
