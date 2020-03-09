@@ -2,27 +2,38 @@
   <div>
     <!-- <div class="d-flex justify-center">
       <v-btn text @click="$router.push({name:'home'})">Abbruch</v-btn>
-    </div> -->
-    <div class style="height:80vh">
-      <transition-group
-        appear
-        appear-active-class="animated fadeInUp"
-        name="custom-classes-transition"
-        :enter-active-class="isNext ? 'animated fadeInUp' : 'animated fadeInDown'"
-        :leave-active-class="isNext ? 'animated fadeOutUp' : 'animated fadeOutDown'"
-        mode="out-in"
-      >
-        <v-card v-if="menu==1" class="row" key="1" outlined>
-          <div class="d-flex justify-center align-center">Erste Übung</div>
-        </v-card>
+    </div>-->
 
-        <v-card v-if="menu==2" class="row" key="2" outlined>
-          <div class="d-flex justify-center align-center">Zweite Übung</div>
-        </v-card>
-      </transition-group>
+    <div style="height:80vh">
+      <div v-for="(card, index) in 3" :key="index">
+        <transition
+          v-if="index==menu"
+          appear
+          appear-active-class="animated fadeInUp"
+          name="custom-classes-transition"
+          :enter-active-class="isNext ? 'animated fadeInUp' : 'animated fadeInDown'"
+          :leave-active-class="isNext ? 'animated fadeOutUp' : 'animated fadeOutDown'"
+          mode="out-in"
+        >
+          <v-card class="customrow" outlined>
+            <video width="100%" controls>
+              <source src="movie.mp4" type="video/mp4" />
+              <source src="movie.ogg" type="video/ogg" />Your browser does not support the video tag.
+            </video>
+            <v-card-title>Übung Name {{index+1}}/3</v-card-title>
+
+            <v-card-text>
+              <div class="my-4 subtitle-1">Hier BLabla</div>
+
+              <div>Viel BLABLA</div>
+            </v-card-text>
+          </v-card>
+        </transition>
+      </div>
     </div>
     <div class="d-flex justify-center align-center bottom_nav">
       <button @click="prev" class="prev">Zurück</button>
+      <v-progress-circular :size="50" :value="progress">{{ progressDiscret }}</v-progress-circular>
       <button @click="next" class="next">Weiter</button>
     </div>
   </div>
@@ -32,9 +43,18 @@
 export default {
   data() {
     return {
-      menu: 1,
+      menu: 0,
       isNext: true
     };
+  },
+
+  computed: {
+    progress() {
+      return (this.menu / 3) * 100;
+    },
+    progressDiscret(){
+      return this.menu + "/"+3
+    }
   },
   methods: {
     next() {
@@ -54,26 +74,14 @@ export default {
   position: sticky;
   bottom: 0;
 }
-.row {
+.customrow {
   /* Slide Position */
   position: absolute;
-  height: 70vh;
-  width: 90vh;
-  align-content: center;
   margin: auto;
   left: 0;
   right: 0;
-  /* Border & BG */
-  border: 1px dashed #009688;
-  border-radius: 5px;
-
-  /* Text */
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: bold;
-  font-size: 25px;
-  color: #009688;
-  line-height: 200px;
+  height: 70vh;
+  width: 90vh;
 }
 .nav {
   background-color: #fbe9e7;
@@ -94,7 +102,7 @@ export default {
 .next,
 .prev {
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   width: 70px;
   text-align: center;
   padding: 7px;

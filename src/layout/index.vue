@@ -3,9 +3,11 @@
     <!-- <Drawer v-model="drawer"/> -->
     <v-app-bar app absolute color="white" elevate-on-scroll>
       <v-toolbar-title @click="$router.push({name:'home'})">PaarFit</v-toolbar-title>
-
       <v-spacer></v-spacer>
+      <!-- <router-link :to="{name: 'home'}">Home</router-link> -->
+     
       <!-- <v-btn icon @click="drawer=!drawer"><v-icon>mdi-menu</v-icon></v-btn> -->
+
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on">

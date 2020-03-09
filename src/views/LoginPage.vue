@@ -7,7 +7,7 @@
             <v-card outlined>
               <v-card-text>
                 <v-form>
-                  <h1 class="my-5">Vanilla</h1>
+                  <h1 class="my-5">PaarFit</h1>
                   <v-text-field v-model="username" label="Login" name="login" type="text" />
 
                   <v-text-field
@@ -21,6 +21,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
+                <a text>Passwort vergessen?</a>
                 <v-spacer />
                 <v-btn outlined :loading="loading" :disabled="loading" @click="loginUser">Login</v-btn>
               </v-card-actions>
